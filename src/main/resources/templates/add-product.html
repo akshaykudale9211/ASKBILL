@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Product</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Light blue background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full-screen height */
+        }
+
+        h1 {
+            background-color: #1e90ff; /* Dodger blue */
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        form {
+            background-color: #ffffff; /* White form background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center; /* Center all form elements */
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 90%; /* Adjust width for responsiveness */
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        button {
+            background-color: navy; /* Navy blue for all buttons */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            width: 45%; /* Uniform button sizes */
+        }
+
+        button:hover {
+            background-color: #1e90ff; /* Lighter blue on hover */
+        }
+
+        #message {
+            color: green;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Space between buttons */
+        }
+    </style>
+</head>
+<body>
+<form id="productForm">
+    <h1>Add Product</h1>
+
+    <label for="productName">Product Name:</label>
+    <input type="text" id="productName" name="productName" required />
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" step="0.01" required />
+
+    <div class="button-container">
+        <button type="button" onclick="submitForm()">Add Product</button>
+        <button type="button" onclick="clearForm()">Clear</button>
+        <button type="button" onclick="goHome()">Home</button>
+    </div>
+
+    <p id="message"></p>
+</form>
+
+<script>
+        function submitForm() {
+            const product = {
+                productName: $('#productName').val(),
+                price: $('#price').val()
+            };
+
+            $.ajax({
+                url: '/v1/product/add',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(product),
+                success: function (response) {
+                    $('#message').text("Product added successfully!");
+                },
+                error: function () {
+                    $('#message').text("Failed to add product.");
+                }
+            });
+        }
+
+        function clearForm() {
+            $('#productName').val('');
+            $('#price').val('');
+            $('#message').text('');
+        }
+
+        function goHome() {
+            window.location.href = '/home';
+        }
+    </script>
+</body>
+</html>

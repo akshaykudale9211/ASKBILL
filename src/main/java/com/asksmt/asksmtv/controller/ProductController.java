@@ -5,7 +5,9 @@ import com.asksmt.asksmtv.services.ProductServiceIMPL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,7 +19,7 @@ public class ProductController {
     @Autowired
     private ProductServiceIMPL  serviceIMPL;
 
-    @PostMapping("/add")
+    @PostMapping(value = "/add")
     public ResponseEntity<Product>addProduct(@RequestBody Product product){
         serviceIMPL.addProduct(product);
         return  new ResponseEntity<>(product, HttpStatus.CREATED);
@@ -48,6 +50,8 @@ public class ProductController {
         serviceIMPL.deleteProduct(id);
         return  new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
+
 
 
 

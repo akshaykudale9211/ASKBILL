@@ -1,22 +1,90 @@
-2024-12-21T00:33:42.600+05:30  INFO 18100 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : Starting AsksmtvApplication using Java 17.0.6 with PID 18100 (E:\Workspace\ASKBILL\asksmtv\target\classes started by Speed in E:\Workspace\ASKBILL\asksmtv)
-2024-12-21T00:33:42.604+05:30  INFO 18100 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : No active profile set, falling back to 1 default profile: "default"
-2024-12-21T00:33:42.674+05:30  INFO 18100 --- [asksmtv] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-12-21T00:33:42.674+05:30  INFO 18100 --- [asksmtv] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-12-21T00:33:43.470+05:30  INFO 18100 --- [asksmtv] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-12-21T00:33:43.544+05:30  INFO 18100 --- [asksmtv] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 1 JPA repository interface.
-2024-12-21T00:33:44.196+05:30  INFO 18100 --- [asksmtv] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-12-21T00:33:44.210+05:30  INFO 18100 --- [asksmtv] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-12-21T00:33:44.210+05:30  INFO 18100 --- [asksmtv] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
-2024-12-21T00:33:44.263+05:30  INFO 18100 --- [asksmtv] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-12-21T00:33:44.264+05:30  INFO 18100 --- [asksmtv] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1589 ms
-2024-12-21T00:33:44.430+05:30  INFO 18100 --- [asksmtv] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-12-21T00:33:44.510+05:30  INFO 18100 --- [asksmtv] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
-2024-12-21T00:33:44.555+05:30  INFO 18100 --- [asksmtv] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-12-21T00:33:44.967+05:30  INFO 18100 --- [asksmtv] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-12-21T00:33:45.003+05:30  INFO 18100 --- [asksmtv] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-12-21T00:33:45.585+05:30  INFO 18100 --- [asksmtv] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@78b938a7
-2024-12-21T00:33:45.587+05:30  INFO 18100 --- [asksmtv] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-12-21T00:33:45.794+05:30  INFO 18100 --- [asksmtv] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2024-12-29T00:00:02.029+05:30 ERROR 14928 --- [asksmtv] [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.web.client.ResourceAccessException: I/O error on GET request for "localhost:/8080/v1/product/all": unknown protocol: localhost] with root cause
+
+java.net.MalformedURLException: unknown protocol: localhost
+	at java.base/java.net.URL.<init>(URL.java:681) ~[na:na]
+	at java.base/java.net.URL.fromURI(URL.java:748) ~[na:na]
+	at java.base/java.net.URI.toURL(URI.java:1139) ~[na:na]
+	at org.springframework.http.client.SimpleClientHttpRequestFactory.createRequest(SimpleClientHttpRequestFactory.java:142) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.http.client.support.HttpAccessor.createRequest(HttpAccessor.java:124) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:884) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.client.RestTemplate.getForObject(RestTemplate.java:415) ~[spring-web-6.2.1.jar:6.2.1]
+	at com.asksmt.asksmtv.controller.WebPageController.listProducts(WebPageController.java:45) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2024-12-29T00:00:38.923+05:30  INFO 14928 --- [asksmtv] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-29T00:00:38.967+05:30  INFO 14928 --- [asksmtv] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-12-29T00:00:38.971+05:30  INFO 14928 --- [asksmtv] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29T00:00:38.974+05:30  INFO 14928 --- [asksmtv] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-29T00:00:38.983+05:30  INFO 14928 --- [asksmtv] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-29T00:00:42.397+05:30  INFO 4008 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : Starting AsksmtvApplication using Java 17.0.6 with PID 4008 (E:\Workspace\ASKBILL\asksmtv\target\classes started by Speed in E:\Workspace\ASKBILL\asksmtv)
+2024-12-29T00:00:42.400+05:30  INFO 4008 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-12-29T00:00:42.474+05:30  INFO 4008 --- [asksmtv] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-29T00:00:42.474+05:30  INFO 4008 --- [asksmtv] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-29T00:00:43.249+05:30  INFO 4008 --- [asksmtv] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-29T00:00:43.321+05:30  INFO 4008 --- [asksmtv] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interface.
+2024-12-29T00:00:44.129+05:30  INFO 4008 --- [asksmtv] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-12-29T00:00:44.147+05:30  INFO 4008 --- [asksmtv] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-29T00:00:44.148+05:30  INFO 4008 --- [asksmtv] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-29T00:00:44.202+05:30  INFO 4008 --- [asksmtv] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-29T00:00:44.202+05:30  INFO 4008 --- [asksmtv] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1727 ms
+2024-12-29T00:00:44.411+05:30  INFO 4008 --- [asksmtv] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-29T00:00:44.491+05:30  INFO 4008 --- [asksmtv] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-29T00:00:44.528+05:30  INFO 4008 --- [asksmtv] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-29T00:00:44.984+05:30  INFO 4008 --- [asksmtv] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-29T00:00:45.103+05:30  INFO 4008 --- [asksmtv] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-29T00:00:45.628+05:30  INFO 4008 --- [asksmtv] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6cd0ba25
+2024-12-29T00:00:45.631+05:30  INFO 4008 --- [asksmtv] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-29T00:00:45.749+05:30  INFO 4008 --- [asksmtv] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.28
@@ -24,41 +92,102 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2024-12-21T00:33:46.641+05:30  INFO 18100 --- [asksmtv] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-12-21T00:33:46.867+05:30  INFO 18100 --- [asksmtv] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-12-21T00:33:47.203+05:30  WARN 18100 --- [asksmtv] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-12-21T00:33:47.570+05:30  INFO 18100 --- [asksmtv] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-12-21T00:33:47.600+05:30  INFO 18100 --- [asksmtv] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-12-21T00:33:47.609+05:30  INFO 18100 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : Started AsksmtvApplication in 5.527 seconds (process running for 6.142)
-2024-12-21T00:36:37.526+05:30  INFO 18100 --- [asksmtv] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-12-21T00:36:37.541+05:30  INFO 18100 --- [asksmtv] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-12-21T00:36:37.660+05:30  INFO 18100 --- [asksmtv] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 119 ms
-2024-12-21T00:38:40.521+05:30  WARN 18100 --- [asksmtv] [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'id': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "all"]
-2024-12-21T00:39:36.675+05:30  WARN 18100 --- [asksmtv] [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' is not supported]
-2024-12-21T00:40:22.973+05:30  INFO 18100 --- [asksmtv] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2024-12-21T00:40:23.032+05:30  INFO 18100 --- [asksmtv] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2024-12-21T00:40:23.044+05:30  INFO 18100 --- [asksmtv] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-12-21T00:40:23.059+05:30  INFO 18100 --- [asksmtv] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-12-21T00:40:23.080+05:30  INFO 18100 --- [asksmtv] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-12-21T00:40:35.750+05:30  INFO 2452 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : Starting AsksmtvApplication using Java 17.0.6 with PID 2452 (E:\Workspace\ASKBILL\asksmtv\target\classes started by Speed in E:\Workspace\ASKBILL\asksmtv)
-2024-12-21T00:40:35.753+05:30  INFO 2452 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : No active profile set, falling back to 1 default profile: "default"
-2024-12-21T00:40:35.832+05:30  INFO 2452 --- [asksmtv] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-12-21T00:40:35.832+05:30  INFO 2452 --- [asksmtv] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-12-21T00:40:36.536+05:30  INFO 2452 --- [asksmtv] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-12-21T00:40:36.613+05:30  INFO 2452 --- [asksmtv] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 1 JPA repository interface.
-2024-12-21T00:40:37.280+05:30  INFO 2452 --- [asksmtv] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-12-21T00:40:37.295+05:30  INFO 2452 --- [asksmtv] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-12-21T00:40:37.296+05:30  INFO 2452 --- [asksmtv] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
-2024-12-21T00:40:37.351+05:30  INFO 2452 --- [asksmtv] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-12-21T00:40:37.352+05:30  INFO 2452 --- [asksmtv] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1520 ms
-2024-12-21T00:40:37.527+05:30  INFO 2452 --- [asksmtv] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-12-21T00:40:37.607+05:30  INFO 2452 --- [asksmtv] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
-2024-12-21T00:40:37.652+05:30  INFO 2452 --- [asksmtv] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-12-21T00:40:37.999+05:30  INFO 2452 --- [asksmtv] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-12-21T00:40:38.036+05:30  INFO 2452 --- [asksmtv] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-12-21T00:40:38.506+05:30  INFO 2452 --- [asksmtv] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@30a3a0c1
-2024-12-21T00:40:38.508+05:30  INFO 2452 --- [asksmtv] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-12-21T00:40:38.623+05:30  INFO 2452 --- [asksmtv] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2024-12-29T00:00:46.695+05:30  INFO 4008 --- [asksmtv] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-29T00:00:46.741+05:30  INFO 4008 --- [asksmtv] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29T00:00:47.030+05:30  WARN 4008 --- [asksmtv] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-29T00:00:47.049+05:30  INFO 4008 --- [asksmtv] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-12-29T00:00:47.373+05:30  INFO 4008 --- [asksmtv] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-29T00:00:47.408+05:30  INFO 4008 --- [asksmtv] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-12-29T00:00:47.417+05:30  INFO 4008 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : Started AsksmtvApplication in 5.489 seconds (process running for 5.938)
+2024-12-29T00:00:56.183+05:30  INFO 4008 --- [asksmtv] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-29T00:00:56.184+05:30  INFO 4008 --- [asksmtv] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-29T00:00:56.186+05:30  INFO 4008 --- [asksmtv] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-12-29T00:01:08.447+05:30 ERROR 4008 --- [asksmtv] [http-nio-8080-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: URI is not absolute] with root cause
+
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.base/java.net.URL.fromURI(URL.java:721) ~[na:na]
+	at java.base/java.net.URI.toURL(URI.java:1139) ~[na:na]
+	at org.springframework.http.client.SimpleClientHttpRequestFactory.createRequest(SimpleClientHttpRequestFactory.java:142) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.http.client.support.HttpAccessor.createRequest(HttpAccessor.java:124) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:884) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.client.RestTemplate.getForObject(RestTemplate.java:415) ~[spring-web-6.2.1.jar:6.2.1]
+	at com.asksmt.asksmtv.controller.WebPageController.listProducts(WebPageController.java:45) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2024-12-29T00:02:51.121+05:30  INFO 4008 --- [asksmtv] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-29T00:02:51.505+05:30  INFO 4008 --- [asksmtv] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-12-29T00:02:51.514+05:30  INFO 4008 --- [asksmtv] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29T00:02:51.526+05:30  INFO 4008 --- [asksmtv] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-29T00:02:51.542+05:30  INFO 4008 --- [asksmtv] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-29T00:02:55.481+05:30  INFO 11324 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : Starting AsksmtvApplication using Java 17.0.6 with PID 11324 (E:\Workspace\ASKBILL\asksmtv\target\classes started by Speed in E:\Workspace\ASKBILL\asksmtv)
+2024-12-29T00:02:55.485+05:30  INFO 11324 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-12-29T00:02:55.562+05:30  INFO 11324 --- [asksmtv] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-29T00:02:55.563+05:30  INFO 11324 --- [asksmtv] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-29T00:02:56.251+05:30  INFO 11324 --- [asksmtv] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-29T00:02:56.317+05:30  INFO 11324 --- [asksmtv] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 1 JPA repository interface.
+2024-12-29T00:02:57.015+05:30  INFO 11324 --- [asksmtv] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-12-29T00:02:57.033+05:30  INFO 11324 --- [asksmtv] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-29T00:02:57.034+05:30  INFO 11324 --- [asksmtv] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-29T00:02:57.093+05:30  INFO 11324 --- [asksmtv] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-29T00:02:57.093+05:30  INFO 11324 --- [asksmtv] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1529 ms
+2024-12-29T00:02:57.440+05:30  INFO 11324 --- [asksmtv] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-29T00:02:57.532+05:30  INFO 11324 --- [asksmtv] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-29T00:02:57.576+05:30  INFO 11324 --- [asksmtv] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-29T00:02:57.925+05:30  INFO 11324 --- [asksmtv] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-29T00:02:57.964+05:30  INFO 11324 --- [asksmtv] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-29T00:02:58.384+05:30  INFO 11324 --- [asksmtv] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6fbfece2
+2024-12-29T00:02:58.386+05:30  INFO 11324 --- [asksmtv] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-29T00:02:58.516+05:30  INFO 11324 --- [asksmtv] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.28
@@ -66,17 +195,215 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2024-12-21T00:40:39.433+05:30  INFO 2452 --- [asksmtv] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-12-21T00:40:39.529+05:30  INFO 2452 --- [asksmtv] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-12-21T00:40:39.845+05:30  WARN 2452 --- [asksmtv] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-12-21T00:40:40.168+05:30  INFO 2452 --- [asksmtv] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-12-21T00:40:40.203+05:30  INFO 2452 --- [asksmtv] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-12-21T00:40:40.212+05:30  INFO 2452 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : Started AsksmtvApplication in 4.958 seconds (process running for 5.49)
-2024-12-21T00:40:51.460+05:30  INFO 2452 --- [asksmtv] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-12-21T00:40:51.461+05:30  INFO 2452 --- [asksmtv] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-12-21T00:40:51.463+05:30  INFO 2452 --- [asksmtv] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-12-21T00:42:00.706+05:30  INFO 2452 --- [asksmtv] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2024-12-21T00:42:00.758+05:30  INFO 2452 --- [asksmtv] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2024-12-21T00:42:00.762+05:30  INFO 2452 --- [asksmtv] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-12-21T00:42:00.767+05:30  INFO 2452 --- [asksmtv] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-12-21T00:42:00.777+05:30  INFO 2452 --- [asksmtv] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-29T00:02:59.379+05:30  INFO 11324 --- [asksmtv] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-29T00:02:59.437+05:30  INFO 11324 --- [asksmtv] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29T00:02:59.748+05:30  WARN 11324 --- [asksmtv] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-29T00:02:59.771+05:30  INFO 11324 --- [asksmtv] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-12-29T00:03:00.132+05:30  INFO 11324 --- [asksmtv] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-29T00:03:00.170+05:30  INFO 11324 --- [asksmtv] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-12-29T00:03:00.183+05:30  INFO 11324 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : Started AsksmtvApplication in 5.21 seconds (process running for 5.718)
+2024-12-29T00:03:13.199+05:30  INFO 11324 --- [asksmtv] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-29T00:03:13.199+05:30  INFO 11324 --- [asksmtv] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-29T00:03:13.203+05:30  INFO 11324 --- [asksmtv] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-12-29T00:04:55.518+05:30  INFO 11324 --- [asksmtv] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-29T00:04:55.576+05:30  INFO 11324 --- [asksmtv] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-12-29T00:04:55.580+05:30  INFO 11324 --- [asksmtv] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29T00:04:55.585+05:30  INFO 11324 --- [asksmtv] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-29T00:04:55.599+05:30  INFO 11324 --- [asksmtv] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-29T00:05:51.516+05:30  INFO 2548 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : Starting AsksmtvApplication using Java 17.0.6 with PID 2548 (E:\Workspace\ASKBILL\asksmtv\target\classes started by Speed in E:\Workspace\ASKBILL\asksmtv)
+2024-12-29T00:05:51.526+05:30  INFO 2548 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-12-29T00:05:51.588+05:30  INFO 2548 --- [asksmtv] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-29T00:05:51.589+05:30  INFO 2548 --- [asksmtv] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-29T00:05:52.451+05:30  INFO 2548 --- [asksmtv] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-29T00:05:52.537+05:30  INFO 2548 --- [asksmtv] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 1 JPA repository interface.
+2024-12-29T00:05:53.256+05:30  INFO 2548 --- [asksmtv] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-12-29T00:05:53.271+05:30  INFO 2548 --- [asksmtv] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-29T00:05:53.271+05:30  INFO 2548 --- [asksmtv] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-29T00:05:53.320+05:30  INFO 2548 --- [asksmtv] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-29T00:05:53.320+05:30  INFO 2548 --- [asksmtv] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1730 ms
+2024-12-29T00:05:53.528+05:30  INFO 2548 --- [asksmtv] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-29T00:05:53.616+05:30  INFO 2548 --- [asksmtv] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-29T00:05:53.665+05:30  INFO 2548 --- [asksmtv] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-29T00:05:54.239+05:30  INFO 2548 --- [asksmtv] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-29T00:05:54.292+05:30  INFO 2548 --- [asksmtv] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-29T00:05:55.073+05:30  INFO 2548 --- [asksmtv] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6cd0ba25
+2024-12-29T00:05:55.076+05:30  INFO 2548 --- [asksmtv] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-29T00:05:55.172+05:30  INFO 2548 --- [asksmtv] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.28
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-29T00:05:56.023+05:30  INFO 2548 --- [asksmtv] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-29T00:05:56.074+05:30  INFO 2548 --- [asksmtv] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29T00:05:56.409+05:30  WARN 2548 --- [asksmtv] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-29T00:05:56.439+05:30  INFO 2548 --- [asksmtv] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-12-29T00:05:56.855+05:30  INFO 2548 --- [asksmtv] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-29T00:05:56.888+05:30  INFO 2548 --- [asksmtv] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-12-29T00:05:56.899+05:30  INFO 2548 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : Started AsksmtvApplication in 6.01 seconds (process running for 6.535)
+2024-12-29T00:06:22.057+05:30  INFO 2548 --- [asksmtv] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-29T00:06:22.058+05:30  INFO 2548 --- [asksmtv] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-29T00:06:22.059+05:30  INFO 2548 --- [asksmtv] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-12-29T00:14:29.516+05:30  INFO 2548 --- [asksmtv] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-29T00:14:29.987+05:30  INFO 2548 --- [asksmtv] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-12-29T00:14:30.023+05:30  INFO 2548 --- [asksmtv] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29T00:14:30.099+05:30  INFO 2548 --- [asksmtv] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-29T00:14:30.174+05:30  INFO 2548 --- [asksmtv] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-29T00:16:59.937+05:30  INFO 2032 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : Starting AsksmtvApplication using Java 17.0.6 with PID 2032 (E:\Workspace\ASKBILL\asksmtv\target\classes started by Speed in E:\Workspace\ASKBILL\asksmtv)
+2024-12-29T00:17:00.037+05:30  INFO 2032 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-12-29T00:17:00.166+05:30  INFO 2032 --- [asksmtv] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-29T00:17:00.168+05:30  INFO 2032 --- [asksmtv] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-29T00:17:01.541+05:30  INFO 2032 --- [asksmtv] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-29T00:17:01.640+05:30  INFO 2032 --- [asksmtv] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81 ms. Found 1 JPA repository interface.
+2024-12-29T00:17:02.361+05:30  INFO 2032 --- [asksmtv] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-12-29T00:17:02.374+05:30  INFO 2032 --- [asksmtv] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-29T00:17:02.375+05:30  INFO 2032 --- [asksmtv] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-29T00:17:02.420+05:30  INFO 2032 --- [asksmtv] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-29T00:17:02.421+05:30  INFO 2032 --- [asksmtv] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2253 ms
+2024-12-29T00:17:02.601+05:30  INFO 2032 --- [asksmtv] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-29T00:17:02.672+05:30  INFO 2032 --- [asksmtv] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-29T00:17:02.712+05:30  INFO 2032 --- [asksmtv] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-29T00:17:03.058+05:30  INFO 2032 --- [asksmtv] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-29T00:17:03.097+05:30  INFO 2032 --- [asksmtv] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-29T00:17:03.575+05:30  INFO 2032 --- [asksmtv] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6794ec3b
+2024-12-29T00:17:03.578+05:30  INFO 2032 --- [asksmtv] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-29T00:17:03.671+05:30  INFO 2032 --- [asksmtv] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.28
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-29T00:17:04.517+05:30  INFO 2032 --- [asksmtv] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-29T00:17:04.583+05:30  INFO 2032 --- [asksmtv] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29T00:17:04.864+05:30  WARN 2032 --- [asksmtv] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-29T00:17:04.887+05:30  INFO 2032 --- [asksmtv] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-12-29T00:17:05.258+05:30  INFO 2032 --- [asksmtv] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-29T00:17:05.292+05:30  INFO 2032 --- [asksmtv] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-12-29T00:17:05.300+05:30  INFO 2032 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : Started AsksmtvApplication in 6.146 seconds (process running for 6.93)
+2024-12-29T00:17:09.560+05:30  INFO 2032 --- [asksmtv] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-29T00:17:09.560+05:30  INFO 2032 --- [asksmtv] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-29T00:17:09.564+05:30  INFO 2032 --- [asksmtv] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-12-29T00:24:51.411+05:30  INFO 2032 --- [asksmtv] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-29T00:24:51.485+05:30  INFO 2032 --- [asksmtv] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-12-29T00:24:51.498+05:30  INFO 2032 --- [asksmtv] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29T00:24:51.526+05:30  INFO 2032 --- [asksmtv] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-29T00:24:51.554+05:30  INFO 2032 --- [asksmtv] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-29T00:28:32.586+05:30  INFO 3440 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : Starting AsksmtvApplication using Java 17.0.6 with PID 3440 (E:\Workspace\ASKBILL\asksmtv\target\classes started by Speed in E:\Workspace\ASKBILL\asksmtv)
+2024-12-29T00:28:32.604+05:30  INFO 3440 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-12-29T00:28:32.665+05:30  INFO 3440 --- [asksmtv] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-29T00:28:32.665+05:30  INFO 3440 --- [asksmtv] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-29T00:28:33.395+05:30  INFO 3440 --- [asksmtv] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-29T00:28:33.476+05:30  INFO 3440 --- [asksmtv] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 1 JPA repository interface.
+2024-12-29T00:28:34.163+05:30  INFO 3440 --- [asksmtv] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-12-29T00:28:34.179+05:30  INFO 3440 --- [asksmtv] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-29T00:28:34.179+05:30  INFO 3440 --- [asksmtv] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-29T00:28:34.223+05:30  INFO 3440 --- [asksmtv] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-29T00:28:34.223+05:30  INFO 3440 --- [asksmtv] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1558 ms
+2024-12-29T00:28:34.407+05:30  INFO 3440 --- [asksmtv] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-29T00:28:34.485+05:30  INFO 3440 --- [asksmtv] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-29T00:28:34.534+05:30  INFO 3440 --- [asksmtv] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-29T00:28:34.867+05:30  INFO 3440 --- [asksmtv] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-29T00:28:34.899+05:30  INFO 3440 --- [asksmtv] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-29T00:28:35.258+05:30  INFO 3440 --- [asksmtv] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@402c95b2
+2024-12-29T00:28:35.260+05:30  INFO 3440 --- [asksmtv] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-29T00:28:35.375+05:30  INFO 3440 --- [asksmtv] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.28
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-29T00:28:36.183+05:30  INFO 3440 --- [asksmtv] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-29T00:28:36.249+05:30  INFO 3440 --- [asksmtv] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29T00:28:36.552+05:30  WARN 3440 --- [asksmtv] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-29T00:28:36.575+05:30  INFO 3440 --- [asksmtv] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-12-29T00:28:36.931+05:30  INFO 3440 --- [asksmtv] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-29T00:28:36.965+05:30  INFO 3440 --- [asksmtv] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-12-29T00:28:36.976+05:30  INFO 3440 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : Started AsksmtvApplication in 4.946 seconds (process running for 5.485)
+2024-12-29T00:28:53.646+05:30  INFO 3440 --- [asksmtv] [http-nio-8080-exec-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-29T00:28:53.646+05:30  INFO 3440 --- [asksmtv] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-29T00:28:53.647+05:30  INFO 3440 --- [asksmtv] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-12-29T00:33:50.662+05:30  INFO 3440 --- [asksmtv] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-29T00:33:56.713+05:30  INFO 3960 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : Starting AsksmtvApplication using Java 17.0.6 with PID 3960 (E:\Workspace\ASKBILL\asksmtv\target\classes started by Speed in E:\Workspace\ASKBILL\asksmtv)
+2024-12-29T00:33:56.717+05:30  INFO 3960 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-12-29T00:33:56.774+05:30  INFO 3960 --- [asksmtv] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-29T00:33:56.774+05:30  INFO 3960 --- [asksmtv] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-29T00:33:57.523+05:30  INFO 3960 --- [asksmtv] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-29T00:33:57.608+05:30  INFO 3960 --- [asksmtv] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 1 JPA repository interface.
+2024-12-29T00:33:58.256+05:30  INFO 3960 --- [asksmtv] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-12-29T00:33:58.273+05:30  INFO 3960 --- [asksmtv] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-29T00:33:58.275+05:30  INFO 3960 --- [asksmtv] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-29T00:33:58.333+05:30  INFO 3960 --- [asksmtv] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-29T00:33:58.333+05:30  INFO 3960 --- [asksmtv] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1558 ms
+2024-12-29T00:33:58.505+05:30  INFO 3960 --- [asksmtv] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-29T00:33:58.588+05:30  INFO 3960 --- [asksmtv] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-29T00:33:58.627+05:30  INFO 3960 --- [asksmtv] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-29T00:33:58.933+05:30  INFO 3960 --- [asksmtv] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-29T00:33:58.964+05:30  INFO 3960 --- [asksmtv] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-29T00:33:59.330+05:30  INFO 3960 --- [asksmtv] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@402c95b2
+2024-12-29T00:33:59.332+05:30  INFO 3960 --- [asksmtv] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-29T00:33:59.448+05:30  INFO 3960 --- [asksmtv] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.28
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-29T00:34:00.243+05:30  INFO 3960 --- [asksmtv] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-29T00:34:00.320+05:30  INFO 3960 --- [asksmtv] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29T00:34:00.613+05:30  WARN 3960 --- [asksmtv] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-29T00:34:00.637+05:30  INFO 3960 --- [asksmtv] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-12-29T00:34:00.975+05:30  INFO 3960 --- [asksmtv] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-29T00:34:01.006+05:30  INFO 3960 --- [asksmtv] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-12-29T00:34:01.017+05:30  INFO 3960 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : Started AsksmtvApplication in 4.802 seconds (process running for 5.39)
+2024-12-29T00:34:07.901+05:30  INFO 3960 --- [asksmtv] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-29T00:34:07.902+05:30  INFO 3960 --- [asksmtv] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-29T00:34:07.904+05:30  INFO 3960 --- [asksmtv] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-12-29T00:35:18.411+05:30  INFO 3960 --- [asksmtv] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-29T00:38:18.849+05:30  INFO 9052 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : Starting AsksmtvApplication using Java 17.0.6 with PID 9052 (E:\Workspace\ASKBILL\asksmtv\target\classes started by Speed in E:\Workspace\ASKBILL\asksmtv)
+2024-12-29T00:38:18.858+05:30  INFO 9052 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-12-29T00:38:18.921+05:30  INFO 9052 --- [asksmtv] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-29T00:38:18.922+05:30  INFO 9052 --- [asksmtv] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-29T00:38:19.666+05:30  INFO 9052 --- [asksmtv] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-29T00:38:19.731+05:30  INFO 9052 --- [asksmtv] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 1 JPA repository interface.
+2024-12-29T00:38:20.432+05:30  INFO 9052 --- [asksmtv] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-12-29T00:38:20.450+05:30  INFO 9052 --- [asksmtv] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-29T00:38:20.451+05:30  INFO 9052 --- [asksmtv] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-29T00:38:20.508+05:30  INFO 9052 --- [asksmtv] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-29T00:38:20.508+05:30  INFO 9052 --- [asksmtv] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1586 ms
+2024-12-29T00:38:20.699+05:30  INFO 9052 --- [asksmtv] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-29T00:38:20.781+05:30  INFO 9052 --- [asksmtv] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-29T00:38:20.821+05:30  INFO 9052 --- [asksmtv] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-29T00:38:21.134+05:30  INFO 9052 --- [asksmtv] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-29T00:38:21.172+05:30  INFO 9052 --- [asksmtv] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-29T00:38:21.532+05:30  INFO 9052 --- [asksmtv] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@402c95b2
+2024-12-29T00:38:21.533+05:30  INFO 9052 --- [asksmtv] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-29T00:38:21.629+05:30  INFO 9052 --- [asksmtv] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.28
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-29T00:38:22.437+05:30  INFO 9052 --- [asksmtv] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-29T00:38:22.494+05:30  INFO 9052 --- [asksmtv] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29T00:38:22.790+05:30  WARN 9052 --- [asksmtv] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-29T00:38:22.812+05:30  INFO 9052 --- [asksmtv] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-12-29T00:38:23.177+05:30  INFO 9052 --- [asksmtv] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-29T00:38:23.212+05:30  INFO 9052 --- [asksmtv] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-12-29T00:38:23.223+05:30  INFO 9052 --- [asksmtv] [restartedMain] com.asksmt.asksmtv.AsksmtvApplication    : Started AsksmtvApplication in 4.883 seconds (process running for 5.381)
+2024-12-29T00:38:27.688+05:30  INFO 9052 --- [asksmtv] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-29T00:38:27.689+05:30  INFO 9052 --- [asksmtv] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-29T00:38:27.690+05:30  INFO 9052 --- [asksmtv] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-12-29T00:40:03.521+05:30  INFO 9052 --- [asksmtv] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-29T00:40:03.578+05:30  INFO 9052 --- [asksmtv] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-12-29T00:40:03.581+05:30  INFO 9052 --- [asksmtv] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29T00:40:03.594+05:30  INFO 9052 --- [asksmtv] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-29T00:40:03.606+05:30  INFO 9052 --- [asksmtv] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
